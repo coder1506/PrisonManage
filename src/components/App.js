@@ -32,12 +32,12 @@ const App = () => {
       <div className='menu inline'>
         <div className='title-menu'><b>Khu vực quản trị</b></div>
         <div className='menu-item'>
-          trang chủ
+          Trang chủ
         </div>
         <div className='menu-item'>Quản lý phạm nhân</div>
         <div className='menu-item active'>Khu vực phòng giam</div>
         <div className='menu-item'>Khu vực người thân</div>
-        <div className='menu-item'>quản lý nhân viên</div>
+        <div className='menu-item'>Quản lý nhân viên</div>
 
         <div className='title-menu user'>Người dùng: admin</div>
       </div>
