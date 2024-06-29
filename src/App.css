@@ -1,0 +1,40 @@
+/* css của trang web */
+.app{
+  display: flex;
+  height: 100vh;
+}
+.inline{
+  display: inline;
+}
+.title-menu{
+  color:  white;
+  background: black;
+  padding: 10px 5px;
+}
+.menu{
+  background: black;
+  height: 100%;
+  color: white;
+}
+.menu-item{
+  padding: 10px 5px;
+  margin-left: 15px;
+}
+.active{
+  background: blue;
+}
+.container{
+  width: 87%;
+}
+.table-container{
+  width: 100%;
+}
+.pl-10{
+  padding-left: 10px;
+}
+.add-prison{
+  height: 30px;;
+  color: white;
+  background: black;
+  margin-bottom: 20px;
+}
