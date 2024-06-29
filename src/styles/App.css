@@ -24,7 +24,7 @@
   background: blue;
 }
 .container{
-  width: 87%;
+  width: 100%;
 }
 .table-container{
   width: 100%;
@@ -32,7 +32,7 @@
 .pl-10{
   padding-left: 10px;
 }
-.add-prison{
+.add-problem{
   height: 30px;;
   color: white;
   background: black;
@@ -44,4 +44,9 @@
 }
 .user{
   margin-top: 30px;
+}
+.alert-text{
+  line-height: 30px;
+  padding-left: 10px;
+  background: gray;
 }

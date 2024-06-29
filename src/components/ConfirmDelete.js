@@ -4,6 +4,7 @@ import '../styles/ConfirmDelete.css'
 
 Modal.setAppElement('#root');
 
+// form xác nhận xóa
 const DeleteConfirmation = ({ isOpen, onClose, onConfirm }) => {
   return (
     <Modal
@@ -16,6 +17,7 @@ const DeleteConfirmation = ({ isOpen, onClose, onConfirm }) => {
       <h2>Xác nhận xóa nhà giam</h2>
       <p>Bạn có chắc chắn muốn xóa nhà giam?</p>
       <div className='action-confirm'>
+        {/* action của form */}
         <button onClick={onClose}>Hủy</button>
         <button onClick={onConfirm}>Xác nhận</button>
       </div>
