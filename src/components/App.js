@@ -5,20 +5,29 @@ import DeleteConfirmation from './ConfirmDelete.js';
 
 
 const App = () => {
+  // khai báo biến
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [problemsData, setProblemsData] = useState(problems);
   const [itemToDelete, setItemToDelete] = useState(null);
   const [delSuccess, setDelSuccess] = useState(false);
-
+  /**
+   * xử lý đóng popup xác nhận xóa
+   */
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
+  /**
+   * xử lý mở popup xác nhận xóa
+   */
   const handleDeleteClick = (ID) => {
     setItemToDelete(ID);
     setIsModalOpen(true);
   };
 
+  /**
+   * xử lý xóa dữ liệu
+   */
   const handleConfirmDelete = () => {
     setProblemsData(problemsData.filter((item) => item.id !== itemToDelete))
     // Xử lý logic xóa ở đây
@@ -66,6 +75,7 @@ const App = () => {
                     </tr>
                   ))}
                 </tbody>
+                {/* form popup xác nhận xóa */}
                 <DeleteConfirmation
                   isOpen={isModalOpen}
                   onClose={handleCloseModal}
