@@ -38,3 +38,10 @@
   background: black;
   margin-bottom: 20px;
 }
+.action-confirm{
+  display: flex;
+  justify-content: flex-end;
+}
+.user{
+  margin-top: 30px;
+}

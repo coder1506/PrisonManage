@@ -1,10 +1,31 @@
 import React, {useState} from 'react';
-import prisons from './data.js';
-import '../App.css'
+import prisons from './Data.js';
+import '../styles/App.css'
+import DeleteConfirmation from './ConfirmDelete.js';
 
 
 const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [prisonsData, setPrisonsData] = useState(prisons);
+  const [itemToDelete, setItemToDelete] = useState(null);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleDeleteClick = (ID) => {
+    setItemToDelete(ID);
+    setIsModalOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    setPrisonsData(prisonsData.filter((item) => item.id !== itemToDelete))
+    // Xử lý logic xóa ở đây
+    setIsModalOpen(false);
+
+    alert('Bạn đã xóa thành công!');
+  };
+
   return (
     <div className='app'>
       {/* phần menu */}
@@ -17,6 +38,8 @@ const App = () => {
         <div className='menu-item active'>Khu vực phòng giam</div>
         <div className='menu-item'>Khu vực người thân</div>
         <div className='menu-item'>quản lý nhân viên</div>
+
+        <div className='title-menu user'>Người dùng: admin</div>
       </div>
       {/* phần danh sách chính */}
       <div className='container inline'>
@@ -36,18 +59,23 @@ const App = () => {
                 </thead>
                 <tbody>
                   {/* phần dữ liệu được bind động từ file data.js */}
-                  {prisonsData.map((employee, index) => ( 
+                  {prisonsData.map((prison, index) => ( 
                     <tr>
-                        <td>{employee.code}</td>
-                        <td>{employee.name}</td>
-                        <td>{employee.quantity}</td>
+                        <td>{prison.code}</td>
+                        <td>{prison.name}</td>
+                        <td>{prison.quantity}</td>
                         <td>
-                          <button>Sửa</button>
-                          <button>Xóa</button>
+                          <button >Sửa</button>
+                          <button onClick={() => handleDeleteClick(prison.id)}>Xóa</button>
                         </td>
                     </tr>
                   ))}
                 </tbody>
+                <DeleteConfirmation
+                  isOpen={isModalOpen}
+                  onClose={handleCloseModal}
+                  onConfirm={handleConfirmDelete}
+                />
           </table>
         </div>
       </div>
