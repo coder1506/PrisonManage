@@ -23,7 +23,9 @@ const App = () => {
     // Xử lý logic xóa ở đây
     setIsModalOpen(false);
 
-    alert('Bạn đã xóa thành công!');
+    setTimeout(() => {
+      alert('Bạn đã xóa thành công!');
+    }, 10);
   };
 
   return (
